@@ -2,6 +2,7 @@ package com.example.todolist
 
 import android.content.Context
 import androidx.core.content.ContextCompat
+import java.io.Serializable
 import java.time.LocalDate
 import java.time.LocalTime
 import java.util.*
@@ -11,7 +12,7 @@ class ItemTarefa (
     var Hora : LocalTime?,
     var DataCompletada : LocalDate?,
     var id : UUID = UUID.randomUUID()
-){
+)  : Serializable {
     fun estaCompleto() = DataCompletada != null
     fun imageSrc(): Int = if (estaCompleto()) R.drawable.checked_24 else  R.drawable.unchecked_24
     fun imageColor(context: Context) : Int = if (estaCompleto()) roxo(context) else preto(context)

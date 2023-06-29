@@ -1,18 +1,18 @@
 package com.example.todolist
-
-import android.content.ClipData.Item
+import java.lang.reflect.Type
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import java.time.LocalDate
 import java.time.LocalTime
 import java.util.UUID
 
-class TarefaViewModel : ViewModel()
+class TarefaViewModel(): ViewModel()
 {
     var itensTarefas = MutableLiveData<MutableList<ItemTarefa>>()
-
     init {
-        itensTarefas.value = mutableListOf()
     }
 
     fun adicionarNovaTarefa( novaTarefa : ItemTarefa){
@@ -39,4 +39,6 @@ class TarefaViewModel : ViewModel()
         }
         itensTarefas.postValue(lista)
     }
+
+
 }
